@@ -7,8 +7,8 @@ fn main() {
 
     let config = match Config::new(&args) {
         Ok(value) => value,
-        Err(_) => {
-            eprintln!("Not enough arguments received");
+        Err(e) => {
+            eprintln!("{}", e);
             process::exit(1);
         }
     };
